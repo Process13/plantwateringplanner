@@ -31,16 +31,17 @@ public class Plant {
         return cmHeight;
     }
 
-
-    public void calculateMeasurement(float calculation) {
+    protected void calculateMeasurement(float calculation) {
         //372cl -> 3.72L    72cl -> 7.2dl   2cl -> 2cl
-        if (Math.floor(calculation) < 100){
-            this.liquidMeasurement = "dl";
-            this.clLiquidAmount = calculation;      //dl
-        }
         if (Math.floor(calculation) < 10){
             this.liquidMeasurement = "cl";
-            this.clLiquidAmount = calculation/10;   //cl
+            this.clLiquidAmount = calculation;      //cl
+            return;
+        }
+        if (Math.floor(calculation) < 100){
+            this.liquidMeasurement = "dl";
+            this.clLiquidAmount = calculation/10;   //dl
+            return;
         }
         this.liquidMeasurement = "L";
         this.clLiquidAmount = calculation/100;      //L
