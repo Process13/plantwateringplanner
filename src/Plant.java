@@ -2,7 +2,6 @@ public class Plant {
     private String name;
     protected float cmHeight;
     protected float clLiquidAmount;   //liquid amount in cl
-    protected String liquidType;
     protected String liquidMeasurement;
 
     public Plant(String name, float cmHeight) {
@@ -10,27 +9,19 @@ public class Plant {
         this.cmHeight = cmHeight;
     }
 
+    public String getLiquidAmount() {
+        return clLiquidAmount + liquidMeasurement;
+    }
+
     public String getName() {
         return name;
     }
 
-
-    public String getPlantLiquidType() {
-        return liquidType;
-    }
-
-    public String getClLiquidAmount() {
-        return name + " behöver " + clLiquidAmount + liquidMeasurement + " dagligen";
-    }
-
-    public String getPlantName() {
-        return name;
-    }
-
-    public float getPlantHeight() {
+    public float getHeight() {
         return cmHeight;
     }
 
+    //Method that is called on from each plant to
     protected void calculateMeasurement(float calculation) {
         //372cl -> 3.72L    72cl -> 7.2dl   2cl -> 2cl
         if (Math.floor(calculation) < 10){
@@ -46,5 +37,4 @@ public class Plant {
         this.liquidMeasurement = "L";
         this.clLiquidAmount = calculation/100;      //L
     }
-
 }
