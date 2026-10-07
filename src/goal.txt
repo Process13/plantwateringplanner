@@ -1,0 +1,25 @@
+//PLANERING//
+//1. Fråga användaren vilken växt som ska få vätska
+//2. Räkna ut hur mycket vätska den växten behöver
+//3. Visa mängden och vilken sorts vätska som ska serveras
+//4. Hantera felaktig inmatning utan att krascha
+
+//Kaktusen Igge, 20 cm hög
+//Palmen Laura, 5 meter hög
+//Köttätande växten Meatloaf, 0,7 meter hög
+//Palmen Olof, 1 meter hög
+
+//1. Palmer     (Objekt)
+//Vätska: kranvatten
+//Formel: 0,5 liter per dag gånger längden i meter
+//Exempel: en palm som är 3 meter hög behöver 0,5 × 3 = 1,5 liter per dag
+
+//2. Köttätande växter     (Objekt)
+//Vätska: proteindryck
+//Formel: en basnivå på 0,1 liter per dag plus 0,2 liter gånger längden i meter
+//Exempel: en köttätande växt som är 50 cm hög behöver 0,1 + (0,2 × 0,5) = 0,2 liter per dag
+
+//3. Kaktusar     (Objekt)
+//Vätska: mineralvatten
+//Formel: 2 cl per dag
+//Storleken spelar ingen roll för en kaktus
