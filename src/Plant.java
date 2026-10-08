@@ -37,4 +37,13 @@ public class Plant {
         this.liquidMeasurement = "L";
         this.clLiquidAmount = calculation/100;      //L
     }
+    //System.out.println("\n" + igge.getName() + " ska vattnas med " +
+    // igge.getLiquidAmount() + " " + igge.getliquidType() + " dagligen.");
+    @Override
+    public String toString() {
+        return getName()
+                + " ska vattnas med "
+                + getLiquidAmount()
+                + " ";
+    }
 }

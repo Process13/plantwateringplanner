@@ -1,5 +1,10 @@
 public enum LiquidType {
     KRANVATTEN,
     MINERALVATTEN,
-    PROTEINDRYCK
+    PROTEINDRYCK;
+
+    @Override
+    public String toString() {
+        return name().toLowerCase();
+    }
 }
