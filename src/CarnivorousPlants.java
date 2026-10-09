@@ -14,7 +14,7 @@ public class CarnivorousPlants extends Plant {
     private void calculateLiquidAmount(){
         //0,1 liter per dag plus 0,2 liter gånger längden i meter
         //0.1L = 10cl   1m = 100cm  ->  10cl + (20cl * cmHeight) = clLiquidAmount
-        float calculation = 10 + (20 * getHeight());
+        float calculation = 10 + (20 * getCmHeight()/100);  // divide by 100 to convert CmHeight to meters
         calculateMeasurement(calculation);
     }
 }

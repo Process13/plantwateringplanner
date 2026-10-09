@@ -1,25 +1,29 @@
 public class Plant {
+
     private String name;
     protected float cmHeight;
     protected float clLiquidAmount;   //liquid amount in cl
     protected String liquidMeasurement;
 
+    //Constructor
     public Plant(String name, float cmHeight) {
         this.name = name;
         this.cmHeight = cmHeight;
     }
 
-    public String getLiquidAmount() {
-        return clLiquidAmount + liquidMeasurement;
-    }
 
     public String getName() {
         return name;
     }
 
-    public float getHeight() {
+    public float getCmHeight() {
         return cmHeight;
     }
+
+    public String getLiquidAmountStr() {
+        return clLiquidAmount + liquidMeasurement;
+    }
+
 
     //Method that is called on from each plant to
     protected void calculateMeasurement(float calculation) {
@@ -43,7 +47,7 @@ public class Plant {
     public String toString() {
         return getName()
                 + " ska vattnas med "
-                + getLiquidAmount()
+                + getLiquidAmountStr()
                 + " ";
     }
 }

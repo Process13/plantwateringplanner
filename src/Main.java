@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -14,24 +13,26 @@ public class Main {
 
         //Välj växt
         //Inga hårdkodade strängar eller siffror får förekomma i koden
+        System.out.print("Ange växtens namn: ");
         while (true) {
             String response = scanner.nextLine();
             if (response.trim().equalsIgnoreCase("laura")) {
-                System.out.println("\n" + laura.getName() + " ska vattnas med " + laura.getLiquidAmount() + " " + laura.getliquidType() + " dagligen.");
+                System.out.println("\n" + laura + laura.getliquidType() + " dagligen.");
                 break;
             } else if (response.trim().equalsIgnoreCase("olof")) {
-                System.out.println("\n" + olof.getName() + " ska vattnas med " + olof.getLiquidAmount() + " " + olof.getliquidType() + " dagligen.");
+                System.out.println("\n" + olof + olof.getliquidType() + " dagligen.");
                 break;
             } else if (response.trim().equalsIgnoreCase("igge")) {
-                System.out.println("\n" + igge.getName() + " ska vattnas med " + igge.getLiquidAmount() + " " + igge.getliquidType() + " dagligen.");
+                System.out.println("\n" + igge + igge.getliquidType() + " dagligen.");
                 break;
             } else if (response.trim().equalsIgnoreCase("meatloaf")) {
-                System.out.println("\n" + meatloaf.getName() + " ska vattnas med " + meatloaf.getLiquidAmount() + " " + meatloaf.getliquidType() + " dagligen.");
+                System.out.println("\n" + meatloaf + meatloaf.getliquidType() + " dagligen.");
                 break;
             } else {
                 System.out.println("\nDet finns ingen växt med det namnet, försök igen.");
             }
         }
+        scanner.close();
 
 
     }
