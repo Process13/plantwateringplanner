@@ -16,16 +16,16 @@ public class Main {
         System.out.print("Ange växtens namn: ");
         while (true) {
             String response = scanner.nextLine();
-            if (response.trim().equalsIgnoreCase("laura")) {
+            if (response.trim().equalsIgnoreCase(String.valueOf(PlantNames.LAURA))) {
                 System.out.println("\n" + laura + laura.getliquidType() + " dagligen.");
                 break;
-            } else if (response.trim().equalsIgnoreCase("olof")) {
+            } else if (response.trim().equalsIgnoreCase(String.valueOf(PlantNames.OLOF))) {
                 System.out.println("\n" + olof + olof.getliquidType() + " dagligen.");
                 break;
-            } else if (response.trim().equalsIgnoreCase("igge")) {
+            } else if (response.trim().equalsIgnoreCase(String.valueOf(PlantNames.IGGE))) {
                 System.out.println("\n" + igge + igge.getliquidType() + " dagligen.");
                 break;
-            } else if (response.trim().equalsIgnoreCase("meatloaf")) {
+            } else if (response.trim().equalsIgnoreCase(String.valueOf(PlantNames.MEATLOAF))) {
                 System.out.println("\n" + meatloaf + meatloaf.getliquidType() + " dagligen.");
                 break;
             } else {
