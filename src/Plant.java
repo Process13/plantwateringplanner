@@ -20,26 +20,31 @@ public class Plant {
         return cmHeight;
     }
 
+    public float getMeterHeight() {
+        return cmHeight/100;
+    }
+
     public String getLiquidAmountStr() {
         return clLiquidAmount + liquidMeasurement;
     }
 
 
-    //Method that is called on from each plant to
-    protected void calculateMeasurement(float calculation) {
+    //Method that is called on from each plant to calculate the value
+    protected void setCalculatedMeasurement(float formula) {
+
         //372cl -> 3.72L    72cl -> 7.2dl   2cl -> 2cl
-        if (Math.floor(calculation) < 10){
-            this.liquidMeasurement = "cl";
-            this.clLiquidAmount = calculation;      //cl
+        if (Math.floor(formula) < 10){  //If less than 10 cl, use cl
+            this.liquidMeasurement = LiquidMeasurementsMetric.CL.toString();
+            this.clLiquidAmount = formula;      //cl
             return;
         }
-        if (Math.floor(calculation) < 100){
-            this.liquidMeasurement = "dl";
-            this.clLiquidAmount = calculation/10;   //dl
+        if (Math.floor(formula) < 100){ //If less than 10dl, use dl
+            this.liquidMeasurement = LiquidMeasurementsMetric.DL.toString();
+            this.clLiquidAmount = formula/10;   //dl
             return;
         }
-        this.liquidMeasurement = "L";
-        this.clLiquidAmount = calculation/100;      //L
+        this.liquidMeasurement = LiquidMeasurementsMetric.L.toString();
+        this.clLiquidAmount = formula/100;      //L
     }
     //System.out.println("\n" + igge.getName() + " ska vattnas med " +
     // igge.getLiquidAmount() + " " + igge.getliquidType() + " dagligen.");
