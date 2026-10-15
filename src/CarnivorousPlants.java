@@ -16,7 +16,12 @@ public class CarnivorousPlants extends Plant {
         //0,1 liter per dag plus 0,2 liter gånger längden i meter
         //10cl + (20cl * getMeterHeight()) = clLiquidAmount
 
-        float formula = 10 + (20 * getMeterHeight());
+        float formula =
+                CentiliterValues.TEN_CENTILITERS.getClValue()
+                + (
+                        CentiliterValues.TWENTY_CENTILITERS.getClValue()
+                        * getMeterHeight()
+                );
         setCalculatedMeasurement(formula);
     }
 }

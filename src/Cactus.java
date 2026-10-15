@@ -15,7 +15,7 @@ public class Cactus extends Plant{
     private void setFormula(){
         //Kaktus ska alltid ha 2cl oberoende av höjd
 
-        float formula = 2;
+        float formula = CentiliterValues.TWO_CENTILITERS.getClValue();
         setCalculatedMeasurement(formula);
     }
 

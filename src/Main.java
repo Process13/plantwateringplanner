@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         //Växterna läggs till
+        List<Plant> plants = new ArrayList<>();
         Palms laura = new Palms("Laura", 500);
         Palms olof = new Palms("Olof", 100);
         Cactus igge = new Cactus("Igge", 20);

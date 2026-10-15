@@ -5,6 +5,7 @@ public class Plant {
     protected float clLiquidAmount;   //liquid amount in cl
     protected String liquidMeasurement;
 
+
     //Constructor
     public Plant(String name, float cmHeight) {
         this.name = name;
