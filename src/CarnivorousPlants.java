@@ -9,7 +9,7 @@ public class CarnivorousPlants extends Plant {
         return LiquidType.PROTEINDRYCK;
     }
 
-    private void setClFormula(){
+    public void setClFormula(){
         float clFormula =
                 CentiliterValues.TEN_CENTILITERS.getClValue()
                 + (

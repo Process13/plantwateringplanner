@@ -9,7 +9,7 @@ public class Palms extends Plant {
         return LiquidType.KRANVATTEN;
     }
 
-    private void setClFormula(){
+    public void setClFormula(){
         float clFormula = getCmHeight() / 2;
         setCalculatedMeasurement(clFormula);
     }

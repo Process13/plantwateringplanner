@@ -9,7 +9,7 @@ public class Cactus extends Plant{
         return LiquidType.MINERALVATTEN;
     }
 
-    private void setClFormula(){
+    public void setClFormula(){
         float clFormula = CentiliterValues.TWO_CENTILITERS.getClValue();
         setCalculatedMeasurement(clFormula);
     }
