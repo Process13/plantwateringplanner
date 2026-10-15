@@ -1,4 +1,4 @@
-public class Plant {
+public abstract class Plant implements PlantLiquid {
 
     private String name;
     protected float cmHeight;
