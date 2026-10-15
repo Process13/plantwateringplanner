@@ -1,7 +1,8 @@
 public enum CentiliterValues {
     TWO_CENTILITERS(2),
     TEN_CENTILITERS(10),
-    TWENTY_CENTILITERS(20);
+    TWENTY_CENTILITERS(20),
+    ONE_HUNDRED_CENTILITERS(100);
 
     private int clValue;
 

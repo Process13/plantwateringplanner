@@ -7,15 +7,12 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        //Växterna läggs till
         List<Plant> plants = new ArrayList<>();
         Palms laura = new Palms("Laura", 500);
         Palms olof = new Palms("Olof", 100);
         Cactus igge = new Cactus("Igge", 20);
         CarnivorousPlants meatloaf = new CarnivorousPlants("Meatloaf", 70);
 
-        //Välj växt
-        //Inga hårdkodade strängar eller siffror får förekomma i koden
         System.out.print("Ange växtens namn: ");
         while (true) {
             String response = scanner.nextLine();

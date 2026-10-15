@@ -2,11 +2,9 @@ public class Plant {
 
     private String name;
     protected float cmHeight;
-    protected float clLiquidAmount;   //liquid amount in cl
+    protected float clLiquidAmount;
     protected String liquidMeasurement;
 
-
-    //Constructor
     public Plant(String name, float cmHeight) {
         this.name = name;
         this.cmHeight = cmHeight;
@@ -29,26 +27,22 @@ public class Plant {
         return clLiquidAmount + liquidMeasurement;
     }
 
+    protected void setCalculatedMeasurement(float clFormula) {
 
-    //Method that is called on from each plant to calculate the value
-    protected void setCalculatedMeasurement(float formula) {
-
-        //372cl -> 3.72L    72cl -> 7.2dl   2cl -> 2cl
-        if (Math.floor(formula) < 10){  //If less than 10 cl, use cl
+        if (Math.floor(clFormula) < CentiliterValues.TEN_CENTILITERS.getClValue()){
             this.liquidMeasurement = LiquidMeasurementsMetric.CL.toString();
-            this.clLiquidAmount = formula;      //cl
+            this.clLiquidAmount = clFormula;
             return;
         }
-        if (Math.floor(formula) < 100){ //If less than 10dl, use dl
+        if (Math.floor(clFormula) < CentiliterValues.ONE_HUNDRED_CENTILITERS.getClValue()){
             this.liquidMeasurement = LiquidMeasurementsMetric.DL.toString();
-            this.clLiquidAmount = formula/10;   //dl
+            this.clLiquidAmount = clFormula/10;
             return;
         }
         this.liquidMeasurement = LiquidMeasurementsMetric.L.toString();
-        this.clLiquidAmount = formula/100;      //L
+        this.clLiquidAmount = clFormula/100;
     }
-    //System.out.println("\n" + igge.getName() + " ska vattnas med " +
-    // igge.getLiquidAmount() + " " + igge.getliquidType() + " dagligen.");
+
     @Override
     public String toString() {
         return getName()
