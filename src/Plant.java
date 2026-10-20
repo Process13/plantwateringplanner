@@ -1,18 +1,18 @@
 public abstract class Plant implements PlantLiquid {
 
-    private String name;
+    private String plantName;
     protected float cmHeight;
     protected float clLiquidAmount;
     protected String liquidMeasurement;
 
-    public Plant(String name, float cmHeight) {
-        this.name = name;
+    public Plant(String plantName, float cmHeight) {
+        this.plantName = plantName;
         this.cmHeight = cmHeight;
     }
 
 
-    public String getName() {
-        return name;
+    public String getPlantName() {
+        return plantName;
     }
 
     public float getCmHeight() {
@@ -45,7 +45,7 @@ public abstract class Plant implements PlantLiquid {
 
     @Override
     public String toString() {
-        return getName()
+        return getPlantName()
                 + " ska vattnas med "
                 + getLiquidAmountStr()
                 + " ";
