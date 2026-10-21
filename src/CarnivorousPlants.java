@@ -1,21 +1,19 @@
 public class CarnivorousPlants extends Plant {
+    //CarnivorousPlants ärver från Plant
 
     public CarnivorousPlants(String name, float cmHeight){
         super(name, cmHeight);
-        setClFormula();
     }
 
     public LiquidType getLiquidType(){
         return LiquidType.PROTEINDRYCK;
     }
 
-    public void setClFormula(){
-        float clFormula =
-                CentiliterValues.TEN_CENTILITERS.getClValue()
+    public float getClLiquidAmount(){
+        return CentiliterValues.TEN_CENTILITERS.getClValue()
                 + (
                         CentiliterValues.TWENTY_CENTILITERS.getClValue()
                         * getMeterHeight()
                 );
-        setCalculatedMeasurement(clFormula);
     }
 }

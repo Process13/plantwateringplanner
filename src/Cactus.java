@@ -1,17 +1,16 @@
 public class Cactus extends Plant{
+    //Cactus ärver från Plant
 
     public Cactus(String name, float cmHeight){
         super(name, cmHeight);
-        setClFormula();
     }
 
     public LiquidType getLiquidType(){
         return LiquidType.MINERALVATTEN;
     }
 
-    public void setClFormula(){
-        float clFormula = CentiliterValues.TWO_CENTILITERS.getClValue();
-        setCalculatedMeasurement(clFormula);
+    public float getClLiquidAmount(){
+        return CentiliterValues.TWO_CENTILITERS.getClValue();
     }
 
 
