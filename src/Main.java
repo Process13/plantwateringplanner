@@ -9,10 +9,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         List<Plant> plants = new ArrayList<>();
-        Palms laura = new Palms("Laura", 500);
-        Palms olof = new Palms("Olof", 100);
-        Cactus igge = new Cactus("Igge", 20);
-        CarnivorousPlants meatloaf = new CarnivorousPlants("Meatloaf", 70);
+        Plant laura = new Palms("Laura", 500);
+        Plant olof = new Palms("Olof", 100);
+        Plant igge = new Cactus("Igge", 20);
+        Plant meatloaf = new CarnivorousPlants("Meatloaf", 70);
 
         System.out.print("Ange växtens namn: ");
         while (true) {
