@@ -1,9 +1,12 @@
 public abstract class Plant implements PlantLiquid {
+    //Interface PlantLiquid används här för att påverka de klasser som ärver plant.
+    //Plant behöver inte innehålla metoderna i Interface då den är en abstract class.
 
+    //Inkapsling sker här med private
     private String plantName;
-    protected float cmHeight;
-    protected float clLiquidAmount;
-    protected String liquidMeasurement;
+    private float cmHeight;
+    private float liquidAmount;
+    private String liquidMeasurement;
 
     public Plant(String plantName, float cmHeight) {
         this.plantName = plantName;
@@ -24,23 +27,24 @@ public abstract class Plant implements PlantLiquid {
     }
 
     public String getLiquidAmountStr() {
-        return clLiquidAmount + liquidMeasurement;
+        calculateLiquidMeasurement();
+        return liquidAmount + liquidMeasurement;
     }
 
-    protected void setCalculatedMeasurement(float clFormula) {
+    private void calculateLiquidMeasurement() {
 
-        if (Math.floor(clFormula) < CentiliterValues.TEN_CENTILITERS.getClValue()){
-            this.liquidMeasurement = LiquidMeasurementsMetric.CL.toString();
-            this.clLiquidAmount = clFormula;
+        if (Math.floor(getClLiquidAmount()) < CentiliterValues.TEN_CENTILITERS.getClValue()){
+            liquidMeasurement = LiquidMeasurementsMetric.CL.toString();
+            liquidAmount = getClLiquidAmount(); //Polymorfism.
             return;
         }
-        if (Math.floor(clFormula) < CentiliterValues.ONE_HUNDRED_CENTILITERS.getClValue()){
-            this.liquidMeasurement = LiquidMeasurementsMetric.DL.toString();
-            this.clLiquidAmount = clFormula/10;
+        if (Math.floor(getClLiquidAmount()) < CentiliterValues.ONE_HUNDRED_CENTILITERS.getClValue()){
+            liquidMeasurement = LiquidMeasurementsMetric.DL.toString();
+            liquidAmount = getClLiquidAmount()/10;
             return;
         }
-        this.liquidMeasurement = LiquidMeasurementsMetric.L.toString();
-        this.clLiquidAmount = clFormula/100;
+        liquidMeasurement = LiquidMeasurementsMetric.L.toString();
+        liquidAmount = getClLiquidAmount()/100;
     }
 
     @Override
