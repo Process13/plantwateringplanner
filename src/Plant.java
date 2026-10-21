@@ -35,7 +35,7 @@ public abstract class Plant implements PlantLiquid {
 
         if (Math.floor(getClLiquidAmount()) < CentiliterValues.TEN_CENTILITERS.getClValue()){
             liquidMeasurement = LiquidMeasurementsMetric.CL.toString();
-            liquidAmount = getClLiquidAmount(); //Polymorfism.
+            liquidAmount = getClLiquidAmount();
             return;
         }
         if (Math.floor(getClLiquidAmount()) < CentiliterValues.ONE_HUNDRED_CENTILITERS.getClValue()){
@@ -45,6 +45,8 @@ public abstract class Plant implements PlantLiquid {
         }
         liquidMeasurement = LiquidMeasurementsMetric.L.toString();
         liquidAmount = getClLiquidAmount()/100;
+
+        //Polymorfism. getClLiquidAmount() är annorlunda beroende på vilken planta objektet tillhör.
     }
 
     @Override
