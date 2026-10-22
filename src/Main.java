@@ -8,7 +8,6 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        List<Plant> plants = new ArrayList<>();
         Plant laura = new Palms("Laura", 500);
         Plant olof = new Palms("Olof", 100);
         Plant igge = new Cactus("Igge", 20);
